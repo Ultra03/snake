@@ -93,19 +93,23 @@ function moveSnake() {
 function keyPressed() {
   switch(keyCode) {
     case RIGHT_ARROW:
-      snakeDir = "RIGHT";
+      if(snakeDir !== "LEFT")
+        snakeDir = "RIGHT";
       break;
       
     case LEFT_ARROW:
-      snakeDir = "LEFT";
+      if(snakeDir !== "RIGHT")
+        snakeDir = "LEFT";
       break;
       
     case UP_ARROW:
-      snakeDir = "UP";
+      if(snakeDir !== "DOWN")
+        snakeDir = "UP";
       break;
     
     case DOWN_ARROW:
-      snakeDir = "DOWN";
+      if(snakeDir !== "UP")
+        snakeDir = "DOWN";
       break;
   }
   
