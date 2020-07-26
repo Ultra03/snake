@@ -93,24 +93,30 @@ function moveSnake() {
 function keyPressed() {
   switch(keyCode) {
     case RIGHT_ARROW:
+    case KEY_D:
       if(snakeDir !== "LEFT")
         snakeDir = "RIGHT";
       break;
       
     case LEFT_ARROW:
+    case KEY_A:
       if(snakeDir !== "RIGHT")
         snakeDir = "LEFT";
       break;
       
     case UP_ARROW:
+    case KEY_W:
       if(snakeDir !== "DOWN")
         snakeDir = "UP";
       break;
     
     case DOWN_ARROW:
+    case KEY_S:
       if(snakeDir !== "UP")
         snakeDir = "DOWN";
       break;
+    default:
+      console.error(`Unexpected input of ${keyCode}`);
   }
   
   if(keyCode == ESCAPE) {
